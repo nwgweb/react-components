@@ -13,6 +13,7 @@ npm install --save @nwgweb/react-components
 ## Usage
 
 ```tsx
+import React from "react";
 import { Button } from "@nwgweb/react-components";
 
 const button = () => {

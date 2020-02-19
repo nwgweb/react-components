@@ -20,11 +20,10 @@ const IconWrapper: Overload = ({
   color = !color ? "default" : color;
 
   return (
-    <div
-      className={styles[`icon-wrapper-${color}`] + ` ${rest.className}`}
-      {...rest}
-    >
-      <i className={`${iconClass} ${animationClass} animated infinite`}></i>
+    <div {...rest}>
+      <div className={styles[`icon-wrapper-${color}`]}>
+        <i className={`${iconClass} ${animationClass} animated infinite`}></i>
+      </div>
     </div>
   );
 };

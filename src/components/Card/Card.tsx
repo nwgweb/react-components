@@ -11,10 +11,12 @@ type Overload = {
 
 const Card: Overload = ({ title, children, ...rest }) => {
   return (
-    <div className={styles.card} {...rest}>
-      <div className={styles["card-body"]}>
-        <div className={styles["card-title"]}>{title}</div>
-        {children}
+    <div {...rest}>
+      <div className={styles.card}>
+        <div className={styles["card-body"]}>
+          <div className={styles["card-title"]}>{title}</div>
+          {children}
+        </div>
       </div>
     </div>
   );
