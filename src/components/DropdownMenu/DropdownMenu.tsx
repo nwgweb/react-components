@@ -1,5 +1,4 @@
 import React, { ReactNode } from "react";
-import CSSModules from "react-css-modules";
 import styles from "./DropdownMenu.module.scss";
 import { useComponentVisible } from "hooks";
 
@@ -27,18 +26,22 @@ const DropdownMenu: React.FC<Props> = ({ children, closeOnSelect = false }) => {
   } = useComponentVisible(false);
 
   return (
-    <div styleName="menu-container" ref={ref}>
+    <div className={styles["menu-container"]} ref={ref}>
       <div
-        styleName="menu-trigger"
+        className={styles["menu-trigger"]}
         onClick={() => setIsComponentVisible(!isComponentVisible)}
       >
         {children.trigger}
       </div>
       {isComponentVisible && (
         <ul
-          styleName={`menu-dropdown-${
-            children.direction ? children.direction : "down"
-          }-${children.alignment ? children.alignment : "right"}`}
+          className={
+            styles[
+              `menu-dropdown-${
+                children.direction ? children.direction : "down"
+              }-${children.alignment ? children.alignment : "right"}`
+            ]
+          }
         >
           {children.items.map((menuItem, i) => (
             <li
@@ -58,4 +61,4 @@ const DropdownMenu: React.FC<Props> = ({ children, closeOnSelect = false }) => {
   );
 };
 
-export default CSSModules(DropdownMenu, styles);
+export default DropdownMenu;

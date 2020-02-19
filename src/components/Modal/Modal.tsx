@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModule from "react-css-modules";
 import styles from "./Modal.module.scss";
 import { Portal } from "react-portal";
 import Button from "../Button/Button";
@@ -18,23 +17,25 @@ const Modal: React.FC<ModalProps> = ({
 }) => {
   return (
     <Portal>
-      <div styleName="modal-overlay" onClick={() => onCloseModal()}></div>
-      <div styleName="modal">
-        <div styleName="modal-header">
-          <h5 styleName="modal-title">{title}</h5>
+      <div
+        className={styles["modal-overlay"]}
+        onClick={() => onCloseModal()}
+      ></div>
+      <div className={styles["modal"]}>
+        <div className={styles["modal-header"]}>
+          <h5 className={styles["modal-title"]}>{title}</h5>
           <i
-            styleName="modal-close-button"
-            className="fas fa-times"
+            className={styles["modal-close-button"] + " fas fa-times"}
             onClick={() => onCloseModal()}
           ></i>
         </div>
-        <div styleName="modal-body">{children}</div>
-        <div styleName="modal-footer">
+        <div className={styles["modal-body"]}>{children}</div>
+        <div className={styles["modal-footer"]}>
           <Button
             size={35}
             mode="default"
             color="transparent"
-            styleName="modal-button"
+            className={styles["modal-button"]}
             onClick={() => onCloseModal()}
           >
             Cancel
@@ -43,7 +44,7 @@ const Modal: React.FC<ModalProps> = ({
             size={35}
             mode="default"
             color="primary"
-            styleName="modal-button"
+            className={styles["modal-button"]}
             onClick={() => onSubmit()}
           >
             Continue
@@ -54,4 +55,4 @@ const Modal: React.FC<ModalProps> = ({
   );
 };
 
-export default CSSModule(Modal, styles);
+export default Modal;

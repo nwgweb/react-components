@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Button } from "@nwgweb/react-components";
+import { Button, Card } from "@nwgweb/react-components";
 
 export default class App extends Component {
   render() {
@@ -9,9 +9,11 @@ export default class App extends Component {
     };
 
     return (
-      <Button mode="pill" size={35} color="red" onClick={activateLasers}>
-        Activate lasers
-      </Button>
+      <Card title="Card title">
+        <Button mode="pill" size={35} color="red" onClick={activateLasers}>
+          Activate lasers
+        </Button>
+      </Card>
     );
   }
 }

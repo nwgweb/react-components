@@ -1,5 +1,4 @@
 import React from "react";
-import CSSModules from "react-css-modules";
 import styles from "./Card.module.scss";
 
 type CardProps = React.AllHTMLAttributes<HTMLDivElement> & {
@@ -12,13 +11,13 @@ type Overload = {
 
 const Card: Overload = ({ title, children, ...rest }) => {
   return (
-    <div styleName="card" {...rest}>
-      <div styleName="card-body">
-        <div styleName="card-title">{title}</div>
+    <div className={styles.card} {...rest}>
+      <div className={styles["card-body"]}>
+        <div className={styles["card-title"]}>{title}</div>
         {children}
       </div>
     </div>
   );
 };
 
-export default CSSModules(Card, styles);
+export default Card;

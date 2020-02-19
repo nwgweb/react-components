@@ -1,31 +1,36 @@
-import React from 'react'
-import CSSModules from 'react-css-modules';
-import styles from './List.module.scss';
+import React from "react";
+import styles from "./List.module.scss";
 
 type ListProps = React.AllHTMLAttributes<HTMLUListElement> & {
   scrollbox?: boolean;
-}
+};
 
 const ListElement: React.FC<ListProps> = ({ scrollbox, children }) => {
   return (
-    <ul styleName={scrollbox ? 'list--scrollbox' : 'list'}>
+    <ul className={scrollbox ? styles["list--scrollbox"] : styles["list"]}>
       {children}
     </ul>
-  )
+  );
 };
 
 type ListItemProps = React.AllHTMLAttributes<HTMLLIElement> & {
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
-  key: (string | number | undefined);
+  key: string | number | undefined;
 };
 
-const ListItemElement: React.FC<ListItemProps> = ({ key, children, ...rest }) => {
+const ListItemElement: React.FC<ListItemProps> = ({
+  key,
+  children,
+  ...rest
+}) => {
   return (
-    <li key={key} styleName="listItem" {...rest}>{children}</li>
-  )
+    <li key={key} className={styles["listItem"]} {...rest}>
+      {children}
+    </li>
+  );
 };
 
-const Container = CSSModules(ListElement, styles);
-const Item = CSSModules(ListItemElement, styles);
+const Container = ListElement;
+const Item = ListItemElement;
 
 export default { Container, Item };

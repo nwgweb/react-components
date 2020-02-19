@@ -1,11 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+import React from "react";
 
 const useComponentVisible = (initialIsVisible: boolean) => {
-  const [isComponentVisible, setIsComponentVisible] = useState(initialIsVisible);
-  const ref = useRef<HTMLDivElement>(null);
+  const [isComponentVisible, setIsComponentVisible] = React.useState(
+    initialIsVisible
+  );
+  const ref = React.useRef<HTMLDivElement>(null);
 
   const handleHideDropdown = (event: KeyboardEvent) => {
-    if (event.key === 'Escape') {
+    if (event.key === "Escape") {
       setIsComponentVisible(false);
     }
   };
@@ -16,16 +18,16 @@ const useComponentVisible = (initialIsVisible: boolean) => {
     }
   };
 
-  useEffect(() => {
-    document.addEventListener('keydown', handleHideDropdown, true);
-    document.addEventListener('click', handleClickOutside, true);
+  React.useEffect(() => {
+    document.addEventListener("keydown", handleHideDropdown, true);
+    document.addEventListener("click", handleClickOutside, true);
     return () => {
-      document.removeEventListener('keydown', handleHideDropdown, true);
-      document.removeEventListener('click', handleClickOutside, true);
+      document.removeEventListener("keydown", handleHideDropdown, true);
+      document.removeEventListener("click", handleClickOutside, true);
     };
   });
 
   return { ref, isComponentVisible, setIsComponentVisible };
-}
+};
 
 export default useComponentVisible;

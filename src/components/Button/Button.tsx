@@ -1,6 +1,5 @@
-import React from 'react';
-import styles from './Button.module.scss';
-import CSSModules from 'react-css-modules';
+import React from "react";
+import styles from "./Button.module.scss";
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   size: Number;
@@ -11,12 +10,24 @@ export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
   shadow?: boolean;
 };
 
-const Button: React.FC<ButtonProps> = ({ size, mode = 'default', color = 'default', shadow = true, children, ...rest }) => {
+const Button: React.FC<ButtonProps> = ({
+  size,
+  mode = "default",
+  color = "default",
+  shadow = true,
+  children,
+  ...rest
+}) => {
   return (
-    <button styleName={`button-${size}-${mode}-${color}-${shadow ? 'shadow' : 'flat'}`} {...rest}>
+    <button
+      className={
+        styles[`button-${size}-${mode}-${color}-${shadow ? "shadow" : "flat"}`]
+      }
+      {...rest}
+    >
       {children}
     </button>
   );
 };
 
-export default CSSModules(Button, styles);
+export default Button;

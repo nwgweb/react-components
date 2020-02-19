@@ -1,7 +1,6 @@
 import React, { ReactNode } from "react";
-import CSSModule from "react-css-modules";
-import styles from "./DropdownBox.module.scss";
 import { useComponentVisible } from "hooks";
+import styles from "./DropdownBox.module.scss";
 
 interface Props {
   header: String;
@@ -26,20 +25,24 @@ const DropdownBox: React.FC<Props> = ({
   } = useComponentVisible(false);
 
   return (
-    <div styleName="dropdown" ref={ref}>
+    <div className={styles.dropdown} ref={ref}>
       <div
-        styleName="dropdown-trigger"
+        className={styles["dropdown-trigger"]}
         onClick={() => setIsComponentVisible(!isComponentVisible)}
       >
         {children.trigger}
       </div>
       {isComponentVisible && (
         <div
-          styleName={`dropdown-content-${direction ? direction : "down"}-${
-            alignment ? alignment : "right"
-          }`}
+          className={
+            styles[
+              `dropdown-content-${direction ? direction : "down"}-${
+                alignment ? alignment : "right"
+              }`
+            ]
+          }
         >
-          <div styleName="dropdown-content-header">{header}</div>
+          <div className={styles["dropdown-content-header"]}>{header}</div>
           <div>{children.content}</div>
         </div>
       )}
@@ -47,4 +50,4 @@ const DropdownBox: React.FC<Props> = ({
   );
 };
 
-export default CSSModule(DropdownBox, styles);
+export default DropdownBox;
