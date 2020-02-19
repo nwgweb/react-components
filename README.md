@@ -13,8 +13,6 @@ npm install --save nwg-ui
 ## Usage
 
 ```tsx
-import * as React from 'react'
-
 import { Button } from 'nwg-ui'
 
 const button = () => {
