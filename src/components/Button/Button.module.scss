@@ -1,0 +1,123 @@
+@import "../../styles/config";
+/**
+ * ----------------------------------------
+ * Available colors, sizes and modes
+ * ----------------------------------------
+ */
+
+$colors: (default, primary, transparent, red, blue, green, white);
+$sizes: (20, 25, 30, 35, 40, 45, 50);
+$modes: (default, pill);
+$shadows: ("shadow", "flat");
+
+/**
+ * ----------------------------------------
+ * Mixins
+ * ----------------------------------------
+ */
+
+@mixin set-border-radius($mode, $size) {
+  @if $mode == pill {
+    border-radius: #{$size/2}px;
+  } @else {
+    border-radius: $border-radius-md;
+  }
+}
+
+@mixin set-font-size($size) {
+  @if $size < 40 {
+    font-size: 13px;
+  } @else {
+    font-size: 16px;
+  }
+}
+
+/**
+ * ----------------------------------------
+ * Generate button style
+ * ----------------------------------------
+ */
+
+@each $color in $colors {
+  @each $size in $sizes {
+    @each $mode in $modes {
+      @each $shadow in $shadows {
+        .button-#{$size}-#{$mode}-#{$color}-#{$shadow} {
+          position: relative;
+          display: inline-block;
+          height: #{$size}px;
+          line-height: #{$size}px;
+          text-align: center;
+          font-weight: bold;
+          user-select: none;
+          border: 0;
+          padding: 0 20px;
+          transition: all 0.2s ease;
+
+          @if $color == transparent {
+            color: $color-text;
+            background-color: transparent;
+            box-shadow: none !important;
+          } @else if $color == white {
+            color: $color-text;
+          } @else {
+            color: $color-white;
+          }
+
+          @if $color != transparent {
+            @if $shadow == shadow {
+              @extend %box-shadow-#{$color};
+            }
+            @extend %background-color-#{$color};
+          }
+
+          @include set-border-radius($mode, $size);
+          @include set-font-size($size);
+
+          &:hover {
+            text-decoration: none;
+            opacity: 0.8;
+          }
+
+          &[disabled] {
+            background-color: #d4d4d4;
+            box-shadow: none;
+
+            &:hover {
+              opacity: 1;
+            }
+          }
+
+          .icon-loading {
+            animation: spin;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+          }
+
+          .icon-loading,
+          .icon-success,
+          .icon-error {
+            margin-right: 5px;
+            margin-left: -8px;
+          }
+        }
+      }
+    }
+  }
+}
+
+/**
+ * ----------------------------------------
+ * Loading state
+ * ----------------------------------------
+ */
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

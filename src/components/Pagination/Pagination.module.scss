@@ -1,0 +1,53 @@
+.li,
+.next,
+.prev,
+.break {
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 3px;
+
+  .link {
+    padding: 10px 1em;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+    height: 100%;
+    width: 100%;
+    display: block;
+    outline: 0;
+  }
+
+  &:hover:not(.selected):not(.disabled) {
+    background: rgba(0, 0, 0, 0.3);
+
+    .link {
+      color: white;
+    }
+  }
+}
+
+.selected,
+.disabled {
+  .link {
+    cursor: initial;
+    color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+.next,
+.prev {
+  background: rgba(0, 0, 0, 0.1);
+  flex-grow: 1.5;
+}
+
+.container {
+  overflow: hidden;
+  width: 100%;
+  text-align: center;
+  display: grid;
+  grid-gap: 5px;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  padding: 0;
+  user-select: none;
+}

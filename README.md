@@ -15,12 +15,12 @@ npm install --save nwg-ui
 ```tsx
 import * as React from 'react'
 
-import MyComponent from 'nwg-ui'
+import { Button } from 'nwg-ui'
 
-class Example extends React.Component {
+const button = () => {
   render () {
     return (
-      <MyComponent />
+      <Button size={35} color="blue">Click me!</Button>
     )
   }
 }

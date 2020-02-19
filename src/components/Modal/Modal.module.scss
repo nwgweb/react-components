@@ -1,0 +1,83 @@
+@import "../../styles/config";
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 250px;
+  min-height: 100px;
+  z-index: 1000;
+  background-color: $color-white;
+  box-shadow: $box-shadow-large;
+  border-radius: $border-radius-md;
+  overflow: hidden;
+  animation: fadeInDown;
+  animation-duration: 0.3s;
+
+  &-body,
+  &-footer {
+    padding: $gutter;
+  }
+
+  &-header {
+    display: flex;
+    padding: 20px $gutter;
+    font-size: 22px;
+    background-color: $color-gray-light;
+    border-bottom: 1px solid $color-border;
+  }
+
+  &-title {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  &-body {
+    color: $color-text;
+  }
+
+  &-footer {
+    text-align: right;
+    background-color: $color-gray-light;
+    border-top: 1px solid $color-border;
+  }
+
+  &-button {
+    margin: 0 5px;
+  }
+
+  &-close-button {
+    margin: (-$gutter) (-$gutter) (-$gutter) auto;
+    cursor: pointer;
+    padding: $gutter;
+  }
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * ----------------------------------------
+ * Animation
+ * ----------------------------------------
+ */
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -53%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}

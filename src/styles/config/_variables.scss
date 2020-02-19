@@ -1,0 +1,155 @@
+/**
+ * ----------------------------------------
+ * Color palette
+ * ----------------------------------------
+ */
+
+$color-white: #ffffff;
+$color-black: #000000;
+$color-primary: #1d396e;
+$color-primary-dark: #003976;
+$color-gray: #f1f4f6;
+$color-gray-dark: #4a4a4a;
+$color-gray-light: #f9fafb;
+$color-green: #6ee585;
+$color-green-dark: #399a4b;
+$color-green-light: #e9f9ec;
+$color-blue: #5380c3;
+$color-blue-light: #dcefff;
+$color-blue-medium: #c8dfec;
+$color-red: #ff6363;
+$color-red-light: #ffdcdc;
+$color-yellow: #f1c40f;
+$color-yellow-light: #fff7d6;
+
+/**
+ * ----------------------------------------
+ * Typography
+ * ----------------------------------------
+ */
+
+$color-text: #2f2f2f;
+$color-text-light: #757575;
+
+/**
+ * ----------------------------------------
+ * Gutter
+ * ----------------------------------------
+ */
+
+$gutter: 15px;
+
+/**
+ * ----------------------------------------
+ * Background
+ * ----------------------------------------
+ */
+
+%background-color-white {
+  background-color: $color-white;
+}
+%background-color-black {
+  background-color: $color-black;
+}
+%background-color-primary {
+  background-color: $color-primary;
+}
+%background-color-gray-dark {
+  background-color: $color-gray-dark;
+}
+%background-color-green {
+  background-color: $color-green;
+}
+%background-color-blue {
+  background-color: $color-blue;
+}
+%background-color-red {
+  background-color: $color-red;
+}
+%background-color-default {
+  background-color: $color-gray-dark;
+}
+
+/**
+ * ----------------------------------------
+ * Box shadow
+ * ----------------------------------------
+ */
+
+$box-shadow-default: 0 0.125rem 0.625rem rgba(68, 64, 84, 0.4), 0 0.0625rem 0.125rem rgba(68, 64, 84, 0.5);
+$box-shadow-primary: 0 2px 10px rgba(78, 108, 175, 0.5), 0 1px 2px rgba(78, 108, 175, 0.5);
+$box-shadow-red: 0 2px 10px rgba(255, 48, 48, 0.4), 0 1px 2px rgba(255, 48, 48, 0.5);
+$box-shadow-green: 0 2px 10px rgba(109, 229, 133, 0.5), 0 1px 2px rgba(78, 175, 98, 0.5);
+$box-shadow-blue: 0 2px 10px rgba(48, 129, 255, 0.4), 0 1px 2px rgba(48, 148, 255, 0.5);
+
+$box-shadow-large: 0 0.46875rem 2.1875rem rgba(8, 10, 37, 0.03), 0 0.9375rem 1.40625rem rgba(8, 10, 37, 0.03),
+  0 0.25rem 0.53125rem rgba(8, 10, 37, 0.05), 0 0.125rem 0.1875rem rgba(8, 10, 37, 0.03);
+
+%box-shadow-default {
+  box-shadow: $box-shadow-default;
+}
+%box-shadow-primary {
+  box-shadow: $box-shadow-primary;
+}
+%box-shadow-red {
+  box-shadow: $box-shadow-red;
+}
+%box-shadow-green {
+  box-shadow: $box-shadow-green;
+}
+%box-shadow-blue {
+  box-shadow: $box-shadow-blue;
+}
+%box-shadow-white {
+  box-shadow: $box-shadow-default;
+}
+
+/**
+ * ----------------------------------------
+ * Border-radius
+ * ----------------------------------------
+ */
+
+$border-radius-sm: 2px;
+$border-radius-md: 4px;
+$border-radius-lg: 8px;
+
+/**
+ * ----------------------------------------
+ * Border
+ * ----------------------------------------
+ */
+
+$color-border: $color-gray;
+
+/**
+ * ----------------------------------------
+ * Button
+ * ----------------------------------------
+ */
+
+$button-height-default: 40px;
+$button-height-small: 30px;
+$button-height-tiny: 25px;
+
+$button-color-default: $color-gray-dark;
+$button-color-blue: $color-blue;
+$button-color-green: $color-green;
+$button-color-red: $color-red;
+
+/**
+ * ----------------------------------------
+ * Inputs
+ * ----------------------------------------
+ */
+
+$input-border-color: #cccccc;
+$input-focus-color: $color-blue;
+
+/**
+ * ----------------------------------------
+ * Card
+ * ----------------------------------------
+ */
+
+$card-border-radius: $border-radius-md;
