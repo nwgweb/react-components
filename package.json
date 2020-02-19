@@ -1,6 +1,6 @@
 {
   "name": "@nwgweb/react-components",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "NWG React Component Library",
   "author": "nwgweb",
   "license": "MIT",
@@ -9,6 +9,7 @@
     "access": "public"
   },
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "engines": {

@@ -1,6 +1,6 @@
 {
-  "name": "nwg-ui-example",
-  "homepage": "https://nwgweb.github.io/nwg-ui",
+  "name": "nwgweb-react-components-example",
+  "homepage": "https://nwgweb.github.io/nwgweb/react-components",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "^1.1.4",
-    "nwg-ui": "link:.."
+    "@nwgweb/react-components": "link:.."
   },
   "scripts": {
     "start": "react-scripts start",
