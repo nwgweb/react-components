@@ -17,8 +17,8 @@ import { Button } from "nwg-ui";
 
 const button = () => {
   return (
-    <Button mode="pill" size={35} color="blue" onClick={() => doSomething()}>
-      Click me!
+    <Button mode="pill" size={35} color="red" onClick={activateLasers}>
+      Activate lasers
     </Button>
   );
 };
