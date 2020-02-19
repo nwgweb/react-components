@@ -13,15 +13,15 @@ npm install --save nwg-ui
 ## Usage
 
 ```tsx
-import { Button } from 'nwg-ui'
+import { Button } from "nwg-ui";
 
 const button = () => {
-  render () {
-    return (
-      <Button size={35} color="blue">Click me!</Button>
-    )
-  }
-}
+  return (
+    <Button mode="pill" size={35} color="blue" onClick={() => doSomething()}>
+      Click me!
+    </Button>
+  );
+};
 ```
 
 ## License
