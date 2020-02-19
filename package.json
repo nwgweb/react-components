@@ -1,10 +1,13 @@
 {
-  "name": "nwg-ui",
+  "name": "@nwgweb/react-components",
   "version": "1.0.3",
   "description": "NWG React Component Library",
   "author": "nwgweb",
   "license": "MIT",
-  "repository": "nwgweb/nwg-ui",
+  "repository": "nwgweb/react-components",
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
